@@ -16,13 +16,13 @@ int main (void)
     double range [2];
     int i, j, steps [5];
     FILE *doc_graphic, *doc_error;
-    doc_graphic = fopen ("C:\\TEST\\result_graphic.csv", "w");
+    doc_graphic = fopen ("results/result_graphic.csv", "w");
     if (doc_graphic == NULL)
     {
         printf ("Error");
         return 1;
     }
-    doc_error = fopen ("C:\\TEST\\result_errors.csv", "w");
+    doc_error = fopen ("results/result_errors.csv", "w");
     if (doc_error == NULL)
     {
         printf ("Error");
@@ -109,7 +109,7 @@ int main (void)
             fclose (doc_graphic);
             graphic_functions();
             system("gnuplot C:/TEST/plot_data_functions.gnuplot");
-            doc_graphic = fopen ("C:\\TEST\\result_graphic.csv", "a");
+            doc_graphic = fopen ("results/result_graphic.csv", "a");
         }
         fprintf (doc_error, "%lf;%lf;%lf;%lf\n", h[j], max_error_RK4, max_error_IEM, max_error_EM);
         free(y_real);
@@ -157,7 +157,7 @@ void graphic_functions (void)
 {
     int success;
     FILE *fp;
-    fp = fopen ("C:\\TEST\\plot_data_functions.gnuplot","w");
+    fp = fopen ("results/plot_data_functions.gnuplot","w");
     if (fp == NULL)
     {
         printf("Error");
@@ -192,7 +192,7 @@ void graphic_errors (void)
 {
     int success;
     FILE *fp;
-    fp = fopen ("C:\\TEST\\plot_data_errors.gnuplot","w");
+    fp = fopen ("results/plot_data_errors.gnuplot","w");
     if (fp == NULL)
     {
         printf("Error");
@@ -205,10 +205,10 @@ void graphic_errors (void)
     fprintf(fp, "set logscale xy\n");
     fprintf(fp, "set grid\n");
     fprintf(fp, "set terminal png size 1280, 720\n");
-    fprintf(fp, "set output \"C:/TEST/Errors vs h.png\"\n");
-    fprintf(fp, "plot \"C:/TEST/result_errors.csv\" using 1:2 title \"errors RK4\" with linespoints, \\\n");
-    fprintf(fp, "\"C:/TEST/result_errors.csv\" using 1:3 title \"errors IΕΜ\" with linespoints, \\\n");
-    fprintf(fp, "\"C:/TEST/result_errors.csv\" using 1:4 title \"errors ΕΜ\" with linespoints, \n");
+    fprintf(fp, "set output \"results/Errors vs h.png\"\n");
+    fprintf(fp, "plot \"results/result_errors.csv\" using 1:2 title \"errors RK4\" with linespoints, \\\n");
+    fprintf(fp, "\"results/result_errors.csv\" using 1:3 title \"errors IΕΜ\" with linespoints, \\\n");
+    fprintf(fp, "\"results/result_errors.csv\" using 1:4 title \"errors ΕΜ\" with linespoints, \n");
     success = fclose (fp);
     if (success != 0)
     {
