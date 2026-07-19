@@ -37,3 +37,13 @@ y = exp(x²/2)
 ## Purpose
 
 The goal of this project is to study the accuracy and behavior of different numerical methods for solving differential equations.
+
+## Results
+
+### Numerical solution comparison
+
+![Solution comparison](images/solution.png)
+
+### Error analysis
+
+![Error analysis](images/errors.png)
