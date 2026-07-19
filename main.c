@@ -120,7 +120,7 @@ int main (void)
     fclose (doc_graphic);
     fclose (doc_error);
     graphic_errors();
-    system("gnuplot C:/TEST/plot_data_errors.gnuplot");    
+    system("gnuplot results/plot_data_errors.gnuplot");    
     return 0;
 }
 
@@ -171,11 +171,11 @@ void graphic_functions (void)
     fprintf(fp, "set xrange [0:*]\n");
     fprintf(fp, "set yrange [0:*]\n");
     fprintf(fp, "set terminal png size 1280, 720\n");
-    fprintf(fp, "set output \"C:/TEST/differential eq. solving.png\"\n");
-    fprintf(fp, "plot \"C:/TEST/result_graphic.csv\" using 1:2 title \"RK4\" with lines, \\\n");
-    fprintf(fp, "\"C:/TEST/result_graphic.csv\" using 1:3 title \"Improved Euler\" with lines, \\\n");
-    fprintf(fp, "\"C:/TEST/result_graphic.csv\" using 1:4 title \"Euler\" with lines, \\\n");
-    fprintf(fp, "\"C:/TEST/result_graphic.csv\" using 1:5 title \"real value\" with lines, \n");
+    fprintf(fp, "set output \"results/differential eq. solving.png\"\n");
+    fprintf(fp, "plot \"results/result_graphic.csv\" using 1:2 title \"RK4\" with lines, \\\n");
+    fprintf(fp, "\"results/result_graphic.csv\" using 1:3 title \"Improved Euler\" with lines, \\\n");
+    fprintf(fp, "\"results/result_graphic.csv\" using 1:4 title \"Euler\" with lines, \\\n");
+    fprintf(fp, "\"results/result_graphic.csv\" using 1:5 title \"real value\" with lines, \n");
     success = fclose (fp);
     if (success != 0)
     {
