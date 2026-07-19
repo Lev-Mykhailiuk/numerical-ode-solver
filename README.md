@@ -14,6 +14,41 @@ The analytical solution is:
 
 y = exp(x²/2)
 
+## How to run
+
+### Requirements
+
+To run this project you need:
+
+- GCC compiler
+- Gnuplot (for generating plots)
+
+### Compilation
+
+Compile the program using:
+
+```bash
+gcc main.c -o solver -lm
+```
+### Execution
+
+Windows:
+```cmd
+solver.exe
+```
+
+Linux/macOS:
+```bash
+./solver
+```
+
+The program will ask the user to provide:
+
+- step sizes (`h`);
+- the interval limits for `x`.
+
+After execution, the generated data can be used to create the plots shown in the Results section.
+
 ## Implemented Methods
 
 - Euler Method
@@ -39,6 +74,9 @@ y = exp(x²/2)
 The goal of this project is to study the accuracy and behavior of different numerical methods for solving differential equations.
 
 ## Results
+
+The plots below were generated using the numerical data produced by the solver.
+The example output data used to create these graphs is available in the `examples` folder.
 
 ### Numerical solution comparison
 
