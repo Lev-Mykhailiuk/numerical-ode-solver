@@ -108,7 +108,7 @@ int main (void)
         {
             fclose (doc_graphic);
             graphic_functions();
-            system("gnuplot C:/TEST/plot_data_functions.gnuplot");
+            system("gnuplot results/plot_data_functions.gnuplot");
             doc_graphic = fopen ("results/result_graphic.csv", "a");
         }
         fprintf (doc_error, "%lf;%lf;%lf;%lf\n", h[j], max_error_RK4, max_error_IEM, max_error_EM);
